@@ -1,14 +1,14 @@
 {
-  "name": "brython-snake-ionic",
+  "name": "brython-snake-app",
   "version": "1.0.0",
-  "description": "An Attempt to make a HTML+Python (Brython) mobile and Desktop app with Ionic.",
-  "main": "''",
+  "description": "An Attempt to make a HTML+Python (Brython) mobile and Desktop app.",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "electron ."
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AlmirPaulo/brython-snake-ionic.git"
+    "url": "git+https://github.com/AlmirPaulo/brython-snake-app"
   },
   "keywords": [
     "game",
@@ -22,7 +22,11 @@
   "author": "Yakko Majuri , Almir Paulo",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AlmirPaulo/brython-snake-ionic/issues"
+    "url": "https://github.com/AlmirPaulo/brython-snake-app/issues"
   },
-  "homepage": "https://github.com/AlmirPaulo/brython-snake-ionic#readme"
+  "homepage": "https://github.com/AlmirPaulo/brython-snake-app#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^12.0.2"
+  }
 }
