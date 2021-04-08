@@ -17,3 +17,60 @@ Browser games with Brython really have impressed me. I know there are some other
 <div style='text-align: right;'>
     <a href="https://github.com/AlmirPaulo"><i>-Almir Paulo</i></a>
 </div>
+
+# A Little Guide on How to Proceed
+
+## 1 Installing dependencies
+
+ 
+Your application needs to run, ideally, even without internet connection. So, all your dependencies need to be installed locally. For Brython you just need to visit the [official download page](https://github.com/brython-dev/brython/releases) and grab the newest release. Then you paste it in your code like this:
+ 
+    <script type="text/javascript"
+        src="Brython-3.9.1/brython.js">
+    </script>
+ 
+<blockquote><b>Note:</b> Remeber to insert *brython.js* **ABOVE** of *brython_stdlib.js* (in case you need both). Otherwise, it will bug your app.</blockquote>  
+
+If you have any other dependency, proceed the same way. Take a look at what I did with Bootstrap on the source code for an example. However, if it is a JS library you need to import, you also could proceed like this, but in order to access the library in your Python code you should use the *window* object. Read more in the [official documentation](https://brython.info/static_doc/en/jsobjects.html).
+
+You also need to install *npm* (In linux or Mac just use your package manager. For Windows users, I have no idea on how to do. I'm sorry.), *npm init* a project, then *npm install electron --save-dev* and *npm install electron-packager -g*.  
+
+## 2 Write your code!
+
+You should write all your Python code inside the HTML using a **script tag**, the way we already know how to do in Brython. Sadly, it's not possible to make the code run (in the final app version) as a separate file by the **src** attribute of the **script tag**, because Electron can not compile the app whithin the Python scripts files. My advice is to develop the app with separate python files method and paste all the code into the HTML before compile (making all the necessary modifications in the HTML, of course).
+
+<blockquote><b>Note:</b>  You should name your HTML file "index.html".</blockquote>
+ 
+## 3 We actually need a bit of Javascript...
+
+But don't worry! Even if you do not understand/work with JS, you will be able to handle the code bellow. I will try my best to code it the cleaner way. 
+
+    const {app, BrowserWindow} = require('electron');
+
+    let mainWindow;
+
+    app.on('ready', ()=> {
+   
+    mainWindow = new BrowserWindow({
+        
+    });
+
+    mainWindow.loadURL(`file://${__dirname}/index.html`)
+
+    });
+
+Copy this text and paste it in a file named *index.js* in the root folder of your project. Now you can run your app.
+
+    electron .
+
+
+## 4 Compiling
+
+We need to use the **electron-packager** to compile our app. If you still do not install it, just run **npm install electron-packager -g**. Electron may compile an app for Windows, Linux and Mac.  The only command we need is this one: 
+
+    electron-packager <sourcedir> <appname> --platform=<platform> --arch=<arch> [optional flags...]
+
+To fulfill the parameters the way you want, take a look at the [documentation](https://github.com/electron/electron-packager/blob/master/README.md).
+
+You're Welcome.
+
