@@ -34,11 +34,11 @@ Your application needs to run, ideally, even without internet connection. So, al
 
 If you have any other dependency, proceed the same way. Take a look at what I did with Bootstrap on the source code for an example. However, if it is a JS library you need to import, you also could proceed like this, but in order to access the library in your Python code you should use the *window* object. Read more in the [official documentation](https://brython.info/static_doc/en/jsobjects.html).
 
-You also need to install *npm* (In linux or Mac just use your package manager. For Windows users, I have no idea on how to do. I'm sorry.), *npm init* a project, then *npm install electron --save-dev* and *npm install electron-packager -g*.  
+You also need to install *npm* (In linux or Mac just use your package manager. For Windows users, I have no idea on how to do it. I'm sorry.), *npm init* a project, then *npm install electron --save-dev* and *npm install electron-packager -g*.  
 
 ## 2 Write your code!
 
-You should write all your Python code inside the HTML using a **script tag**, the way we already know how to do in Brython. Sadly, it's not possible to make the code run (in the final app version) as a separate file by the **src** attribute of the **script tag**, because Electron can not compile the app whithin the Python scripts files. My advice is to develop the app with separate python files method and paste all the code into the HTML before compile (making all the necessary modifications in the HTML, of course).
+We all know there are two methods to insert Brython code on HTML: (1) write all your Python code inside the **script tag** or (2) as a separate file by the **src** attribute of the **script tag**. Sadly, Electron cannot compile the app whithin the Python scripts files. So, My advice is to develop the app with the method (2) and only before compile (making all the necessary modifications in the HTML, of course) paste the code directly in HTML like in method (1).
 
 <blockquote><b>Note:</b>  You should name your HTML file "index.html".</blockquote>
  
