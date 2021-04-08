@@ -14,6 +14,7 @@ Also it could help us with mobile development using React Native, Ionic or any o
 
 Browser games with Brython really have impressed me. I know there are some other examples. I just choose this one from [Yakko Majuri](https://github.com/yakkomajuri) because of it's code simplicity... And because The Snake is my favorite retro game :smile:!
 
+
 <div style='text-align: right;'>
     <a href="https://github.com/AlmirPaulo"><i>-Almir Paulo</i></a>
 </div>
@@ -29,7 +30,7 @@ Your application needs to run, ideally, even without internet connection. So, al
         src="Brython-3.9.1/brython.js">
     </script>
  
-<blockquote><b>Note:</b> Remeber to insert *brython.js* **ABOVE** of *brython_stdlib.js* (in case you need both). Otherwise, it will bug your app.</blockquote>  
+<blockquote><b>Note:</b> Remeber to insert "brython.js" <b>ABOVE</b> of "brython_stdlib.js" (in case you need both). Otherwise, it will bug your app.</blockquote>  
 
 If you have any other dependency, proceed the same way. Take a look at what I did with Bootstrap on the source code for an example. However, if it is a JS library you need to import, you also could proceed like this, but in order to access the library in your Python code you should use the *window* object. Read more in the [official documentation](https://brython.info/static_doc/en/jsobjects.html).
 
@@ -52,8 +53,11 @@ But don't worry! Even if you do not understand/work with JS, you will be able to
     app.on('ready', ()=> {
    
     mainWindow = new BrowserWindow({
-        
-    });
+        ///// Optional Parameters /////
+        //    width: 800,
+        //    height: 600,
+        //    resizable: true
+        }); 
 
     mainWindow.loadURL(`file://${__dirname}/index.html`)
 
@@ -63,6 +67,7 @@ Copy this text and paste it in a file named *index.js* in the root folder of you
 
     electron .
 
+If you need more details, please visit the [official Electron documentation](https://www.electronjs.org/docs).
 
 ## 4 Compiling
 
